@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     Person person=list.get(i);
                     String l=person.getPinyin().charAt(0)+"";
                     if (TextUtils.equals(letter,l)){
-                        lvNames.setSelection(i);
+                        lvNames.smoothScrollToPosition(i);
                     }
                 }
 

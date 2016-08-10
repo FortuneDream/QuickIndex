@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -19,6 +20,13 @@ public class QuickIndexView extends View {
     private int cellWidth;
     private int touchIndex = -1;
     private onLetterUpdateListener listener;
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.e("TAG",getClass().getSimpleName()+"onMeasure");
+    }
+
     private static final String[] letters = new String[]{
             "A", "B", "C", "D", "E", "F", "G",
             "H", "I", "J", "K", "L", "M", "N",
@@ -61,6 +69,7 @@ public class QuickIndexView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Log.e("TAG","onDraw");
         //计算坐标
         for (int i = 0; i < letters.length; i++) {
             String text = letters[i];
@@ -77,6 +86,7 @@ public class QuickIndexView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+        Log.e("TAG","onSizeChanged");
         //最好在这里获得单元格的宽和高
         mHeight = getMeasuredHeight();
         cellWidth = getMeasuredWidth();
