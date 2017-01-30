@@ -23,5 +23,3 @@ mPaint.setTypeface(Typeface.DEFAULT_BOLD);//粗体
 > 1. 这里需要注意，DrawText是通过填充一个Rect矩形，再得到Text的高度
 > 2. Paint可以测量Text的长度
 > 2. 并且Text是从左下角开始Draw，而非左上角
-
-## 剩下的都是辣鸡了
